@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мир цветов | </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif;
+            background: linear-gradient(145deg, #fef9f0 0%, #fff5ea 100%);
+            color: #2c241e;
+            line-height: 1.5;
+        }
+
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(135deg, #6b8c5c 0%, #8aa86b 100%);
+            color: white;
+            padding: 40px 20px 60px 20px;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Навигация */
+        nav {
+            background: white;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 15px 20px;
+            margin: -30px 20px 30px 20px;
+            border-radius: 60px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a6741;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 40px;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            background: #e9f3e4;
+            color: #2c5234;
+        }
+
+        /* Основной контейнер */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 25px;
+        }
+
+        /* Секция о цветах */
+        .about {
+            background: white;
+            border-radius: 48px;
+            padding: 40px 35px;
+            margin-bottom: 50px;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            color: #5a7c48;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.05rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #3e3a36;
+        }
+
+        /* Карточки цветов */
+        .flowers-section {
+            margin: 50px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            color: #5a6e4a;
+            margin-bottom: 15px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: #6f6259;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 28px rgba(90, 110, 74, 0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #e2d5cb;
+        }
+
+        .card-content {
+            padding: 20px 22px 28px;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            color: #4e6b3e;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #5b534c;
+            margin-bottom: 18px;
+        }
+
+        .legend {
+            display: inline-block;
+            background: #f3ede8;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ac7b68;
+        }
+
+        /* Таблица интересных фактов */
+        .facts {
+            background: #eef3e8;
+            border-radius: 48px;
+            padding: 40px 30px;
+            margin: 50px 0;
+        }
+
+        .facts h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #2c5234;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-radius: 32px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid #e9e2db;
+        }
+
+        th {
+            background: #dcecd2;
+            color: #2a4b1e;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🌸 Мир цветов 🌼</h1>
+    <div class="subhead">Удивительная энциклопедия красок, ароматов.</div>
+</header>
+
+<nav>
+    <a href="#about">О цветах</a>
+    <a href="#flowers">Популярные виды</a>
+    <a href="#facts">Факты</a>
+    
+</nav>
+
+<main class="container">
+    <!-- Секция О цветах -->
+    <section id="about" class="about">
+        <h2>🌿 Почему цветы — это чудо природы?</h2>
+        <p>Цветы окружают нас повсюду: в парках, садах, на подоконниках и в букетах. Они поднимают настроение, вдохновляют художников и поэтов, а ещё у каждого цветка есть своя легенда. На этой странице мы собрали самые красивые и интересные цветы, которые точно стоит знать. Приятного путешествия в мир флоры!</p>
+    </section>
+
+    <!-- Карточки цветов -->
+    <section id="flowers" class="flowers-section">
+        <h2 class="section-title">🌻 Самые любимые цветы</h2>
+        <p class="section-desc">Каждый из этих цветов имеет уникальный характер и историю</p>
+        <div class="cards">
+            <!-- Роза -->
+            <div class="card">
+              
+                <div class="card-content">
+                    <h3>Роза</h3>
+                    <p>Королева цветов. Существуют тысячи сортов, от белоснежных до чёрных. Символ любви и красоты во многих культурах.</p>
+                    <span class="legend">❤️ Легенда: возникла из пены морской</span>
+                </div>
+            </div>
+            <!-- Тюльпан -->
+            <div class="card">
+                
+                <div class="card-content">
+                    <h3>Тюльпан</h3>
+                    <p>Весенний вестник счастья. Родина тюльпанов — вовсе не Голландия, а горы Центральной Азии. Яркий и жизнерадостный!</p>
+                    <span class="legend">💛 Символ совершенной любви</span>
+                </div>
+            </div>
+            <!-- Ромашка -->
+            <div class="card">
+                
+                <div class="card-content">
+                    <h3>Ромашка</h3>
+                   <p>Простой и душевный цветок. Ромашка известна своими лечебными свойствами. На ней гадают «любит — не любит».</p>
+                    <span class="legend">☀️ Детство и чистота</span>
+                </div>
+            </div>
+            <!-- Пион -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Пион</h3>
+                    <p>Пышный, ароматный, королевский цветок. В Китае пион называют «цветком богатства и знатности».</p>
+                    <span class="legend">✨ Счастливая жизнь</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Таблица фактов -->
+    <section id="facts" class="facts">
+        <h2>📚 Интересные факты о цветах</h2>
+        <table>
+            <thead>
+                <tr><th>Цветок</th><th>Удивительный факт</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>🌻 Подсолнух</td><td>Гелиотропизм — поворачивается вслед за солнцем, а в пасмурный день «смотрит» на восток.</td></tr>
+                <tr><td>💐 Лаванда</td><td>Успокаивает нервную систему, а в древности её использовали для ароматизации белья.</td></tr>
+                <tr><td>🌺 Лотос</td><td>Семена лотоса могут сохранять всхожесть сотни лет! Находят в торфяниках возрастом 1000 лет.</td></tr>
+                <tr><td>🌸 Сакура</td><td>Цветение длится всего около недели, в Японии это символ быстротечности жизни.</td></tr>
+                <tr><td>🌿 Мимоза стыдливая</td><td>При прикосновении складывает листья — защитная реакция от насекомых.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
